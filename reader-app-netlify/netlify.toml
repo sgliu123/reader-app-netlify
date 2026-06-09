@@ -1,5 +1,5 @@
 [build]
-  publish = "."           # 静态文件发布目录
+  publish = "."           # 当前目录作为静态文件根目录
   functions = "netlify/functions"
 
 [[headers]]
@@ -19,7 +19,6 @@
   to = "/admin/index.html"
   status = 200
 
-# 确保 SPA 路由
 [[redirects]]
   from = "/*"
   to = "/index.html"
