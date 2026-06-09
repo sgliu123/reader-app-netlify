@@ -1,18 +1,18 @@
 [build]
-  publish = "."           # 当前目录作为静态文件根目录
+  publish = "."
   functions = "netlify/functions"
 
 [[headers]]
   for = "/*"
-    [headers.values]
-    Access-Control-Allow-Origin = "*"
-
-[[headers]]
-  for = "/.netlify/functions/*"
-    [headers.values]
+  [headers.values]
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
 
 [[redirects]]
   from = "/admin/*"
