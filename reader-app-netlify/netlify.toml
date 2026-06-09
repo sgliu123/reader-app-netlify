@@ -1,5 +1,11 @@
 [build]
+  publish = "."           # 静态文件发布目录
   functions = "netlify/functions"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
 
 [[headers]]
   for = "/.netlify/functions/*"
@@ -11,4 +17,10 @@
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
+  status = 200
+
+# 确保 SPA 路由
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
